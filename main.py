@@ -15,18 +15,8 @@ diagonal_1 = 0
 diagonal_2 = 0
 
 for row in range(3):
-    for column in range(1):
-        diagonal_1 += matriz[row][column + row]
-
-
-for row2 in range(2, -1, -1):
-    for column2 in range(1):
-        if row2 == 2:
-            diagonal_2 += matriz[row2 + column2][column2]
-        elif row2 == 1:
-            diagonal_2 += matriz[row2 + column2][column2 + row2]
-        else:
-            diagonal_2 += matriz[row2][column2 + 2]
+    diagonal_1 += matriz[row][column + row]
+    diagonal_2 += matriz[row][3 - row - 1]
 
 difference = diagonal_1 - diagonal_2
 
